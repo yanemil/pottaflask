@@ -72,7 +72,7 @@ class Questions:
         for item in data:
             answers = item["incorrect_answers"]
             answers.append(item["correct_answer"])
-            shuffle(answers)
+            #shuffle(answers)
             variable = {
                 "category": item["category"],
                 "question": item["question"],
