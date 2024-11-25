@@ -61,14 +61,31 @@ $(".submit").click(function() {
     }
 
     // light green for unchecked - right answers:
-    var answer_placeholders = $("h6");
-    for (var h = 0; h < answer_placeholders.length; h++) {
-        answer_placeholders[h].style.display = "block";
-        $(answer_placeholders[h]).children("span").text(correct_answers[h]);
-    }
+    // var answer_placeholders = $("h6");
+    // for (var h = 0; h < answer_placeholders.length; h++) {
+    //     answer_placeholders[h].style.display = "block";
+    //     $(answer_placeholders[h]).children("span").text(correct_answers[h]);
+    // }
 
     // show final result:
     $(".finalScore").css("display", "block");
-    $(".finalScore").text("Final Score: " + final_score + " / " + correct_answers.length);
+    if (correct_answers.length != final_score) {
+        $(".finalScore").text("Spróbuj jeszcze raz ...");
+        window.scrollTo(0, document.body.scrollHeight);
+        setTimeout(function(){
+            window.location.reload('');
+        }, 2000);
+    }
+    else {
+        $(".finalScore").text("Brawo! Przechodzisz dalej ...");
+        window.scrollTo(0, document.body.scrollHeight);
+        setTimeout(function(){
+            window.location.href = 'task';
+        }, 3000);
+        
+    }
+
+    // $(".finalScore").css("display", "block");
+    // $(".finalScore").text("Final Score: " + final_score + " / " + correct_answers.length);
 
 })
