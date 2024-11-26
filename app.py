@@ -38,11 +38,11 @@ def first_quiz_page():
     return render_template("quiz_first.html", data=data_1, name="Zadanie 1")
 
 
-@app.route("/quiz/task")
+@app.route("/quiz/snake")
 def second_quiz_page():
-    tool = Questions()
-    data_2 = tool.get_questions()
-    return render_template("quiz_second.html", data=data_2, name="Zadanie 2")
+    # tool = Questions()
+    # data_2 = tool.get_questions()
+    return render_template("snake.html", name="Zadanie 2")
 
     # tool = Questions()
     # my_data = tool.get_questions(

@@ -9,12 +9,12 @@ body {
     box-sizing: border-box;
     width: 100%;
     height: 100%;
-    background-color: #d9daddbe;
+    background-color: #0d0d0dbe;
     padding: 3% 10%;
 }
 .mainDiv h3 span {
     font-weight: bold;
-    color: #3A1078;
+    color: #48b301;
 }
 .categoryDiv {
     color: #183A1D;

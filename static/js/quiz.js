@@ -80,7 +80,7 @@ $(".submit").click(function() {
         $(".finalScore").text("Brawo! Przechodzisz dalej ...");
         window.scrollTo(0, document.body.scrollHeight);
         setTimeout(function(){
-            window.location.href = 'task';
+            window.location.href = 'snake';
         }, 3000);
         
     }

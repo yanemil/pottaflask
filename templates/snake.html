@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}
+    <title>Snake</title>
+{% endblock %}
+
+{% block css_styles %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/snake.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/quiz.css') }}">
+{% endblock %}
+
+{% block content %}
+    <h1 class="text-center fw-bold">Ujażmij węża Slytherinu, aby odkryć lokalizację Dormitorium!</h1>
+    <h3 class="text-center categoryDiv"><span>{{ name }}</span></h3>
+    <h3 class="text-center categoryDiv"><span>Lokalizację dormitorium odkryjesz, gdy osiągniesz wynik równy wiekowi Harrego Potter'a w części "Czara Ognia" </span></h3>
+    <div id="gameContainer">
+        <canvas id="gameBoard" width="500" height="500"></canvas>
+        <div id="scoreText">0</div>
+        <div id="SuccessMessage"></div>
+        <button id="resetBtn">Reset</button>
+    </div>
+{% endblock %}
+
+{% block logic %}
+    <script src="{{ url_for('static', filename='js/snake.js') }}"></script>
+{% endblock %}
