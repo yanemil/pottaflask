@@ -16,6 +16,9 @@ body {
     font-weight: bold;
     color: #48b301;
 }
+.mainDiv h2 span{
+    color: rgba(230, 10, 10, 0.923);
+}
 .categoryDiv {
     color: #183A1D;
 }
@@ -23,7 +26,7 @@ body {
     margin: 80px 0;
 }
 .quizDiv h4 {
-    color: #0e1329;
+    color: #000000;
 }
 .buttonDiv {
     width: 40%;
@@ -62,7 +65,7 @@ body {
     top: 2px;
 }
 .finalScore {
-    color:#017012f1;
+    color:#00fb26f1;
     font-weight: bold;
     display: none;
 }

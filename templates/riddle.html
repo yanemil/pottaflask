@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}
+    <title>Quiz App</title>
+{% endblock %}
+
+{% block css_styles %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/quiz.css') }}">
+{% endblock %}
+
+{% block content %}
+    <div class="mainDiv">
+        <h1 class="text-center fw-bold">Rozwiąż zagadkę</h1>
+        <h3 class="text-center categoryDiv"><span>{{ name }}</span></h3>
+        <hr>
+        <hr>
+        <br>
+        <h2 class="text-center HasloDiv"><span value="------[ HASŁO TO: SECTUMSEMPRA ]------">Hasło</span></h3>
+        <h3 class="text-center categoryDiv"><span>
+            Znajdziesz w wnętrznościach witryny</span></h3>
+        <h3 class="text-center categoryDiv"><span>
+            Zajrzeć tam musisz klikając prawy przycisk myszy</span></h3>
+        <h3 class="text-center categoryDiv"><span>
+            Otworzysz te trzewia jak alohomora Hermiony</span></h3>
+        <h3 class="text-center categoryDiv"><span>
+            Gdy jako Inspektor obejrzysz elementy tej strony.</span></h3>
+        <hr>
+        <hr>
+        <br>
+    </div>
+{% endblock %}

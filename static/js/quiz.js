@@ -82,7 +82,6 @@ $(".submit").click(function() {
         setTimeout(function(){
             window.location.href = 'snake';
         }, 3000);
-        
     }
 
     // $(".finalScore").css("display", "block");

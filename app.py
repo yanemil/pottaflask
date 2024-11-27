@@ -11,7 +11,7 @@ def home_page():
     form = MyForm()
     if request.method == "POST":
         if form.validate_on_submit():
-            if form.decision.data == "TAK!":
+            if form.decision.data == "TRYB VOLDEMORT":
                 return redirect(
                     url_for("first_quiz_page")
                 )
@@ -51,6 +51,12 @@ def second_quiz_page():
     #     quiz_type="boolean"
     # )
     # return render_template("quiz_second.html", data=my_data, name="Zadanie 2")
+
+@app.route("/quiz/riddle")
+def third_quiz_page():
+    # tool = Questions()
+    # data_2 = tool.get_questions()
+    return render_template("riddle.html", name="Zadanie 3")
 
 
 if __name__ == "__main__":

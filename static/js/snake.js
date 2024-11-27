@@ -35,7 +35,7 @@ gameStart();
 
 
 function gameStart(){
-    running= true;
+    running = true;
     scoreText.textContent = score;
     SuccessMessageText.textContent = success;
     createFood();
@@ -87,7 +87,9 @@ function moveSnake(){
         score+=1;
         scoreText.textContent = score;
         if (score == 14) {
-            SuccessMessageText.textContent = "Gratulacje! Lokalizacja to: adress";
+            SuccessMessageText.textContent = "Gratulacje! Idż do: Kawiarnia №№, 12 West Ln, London SE16 4NY.   Zanim udasz się w to miejsce, przejdź do ostatniego zadania, by odgadnąć hasło";
+            resetBtn.textContent = "Przejdż do ostatniej wskazówki";
+            resetBtn.addEventListener("click", goRedirect);
         }
         createFood();
     }
@@ -181,3 +183,10 @@ function resetGame(){
     ];
     gameStart();
 };
+
+function goRedirect() {
+    window.scrollTo(0, document.body.scrollHeight);
+    setTimeout(function(){
+        window.location.href = 'riddle';
+    }, 200);
+}
