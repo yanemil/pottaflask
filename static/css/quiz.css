@@ -9,14 +9,14 @@ body {
     box-sizing: border-box;
     width: 100%;
     height: 100%;
-    background-color: #0d0d0dbe;
+    background-color: #f4f4f4be;
     padding: 3% 10%;
 }
 .mainDiv h3 span {
     font-weight: bold;
-    color: #48b301;
+    color: #000000;
 }
-.mainDiv h2 span{
+.HasloDiv h3 span span {
     color: rgba(230, 10, 10, 0.923);
 }
 .categoryDiv {
@@ -65,7 +65,7 @@ body {
     top: 2px;
 }
 .finalScore {
-    color:#00fb26f1;
+    color:#000000f1;
     font-weight: bold;
     display: none;
 }

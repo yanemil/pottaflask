@@ -74,14 +74,14 @@ $(".submit").click(function() {
         window.scrollTo(0, document.body.scrollHeight);
         setTimeout(function(){
             window.location.reload('');
-        }, 2000);
+        }, 1200);
     }
     else {
         $(".finalScore").text("Brawo! Przechodzisz dalej ...");
         window.scrollTo(0, document.body.scrollHeight);
         setTimeout(function(){
             window.location.href = 'snake';
-        }, 3000);
+        }, 2000);
     }
 
     // $(".finalScore").css("display", "block");

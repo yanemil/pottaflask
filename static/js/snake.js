@@ -87,8 +87,9 @@ function moveSnake(){
         score+=1;
         scoreText.textContent = score;
         if (score == 14) {
-            SuccessMessageText.textContent = "Gratulacje! Idż do: Kawiarnia №№, 12 West Ln, London SE16 4NY.   Zanim udasz się w to miejsce, przejdź do ostatniego zadania, by odgadnąć hasło";
-            resetBtn.textContent = "Przejdż do ostatniej wskazówki";
+            displaySuccess();
+            // SuccessMessageText.textContent = "Gratulacje! Idż do: Kawiarnia №№, 12 West Ln, London SE16 4NY.   Zanim udasz się w to miejsce, przejdź do ostatniego zadania, by odgadnąć hasło";
+            resetBtn.textContent = "Przejdź dalej";
             resetBtn.addEventListener("click", goRedirect);
         }
         createFood();
@@ -167,6 +168,22 @@ function displayGameOver(){
     ctx.fillStyle = "black";
     ctx.textAlign = "center";
     ctx.fillText("GAME OVER!", gameWidth / 2, gameHeight / 2);
+    running = false;
+};
+
+function displaySuccess(){
+    ctx.font = "28px MV Boli";
+    ctx.fillStyle = "black";
+    ctx.textAlign = "center";
+
+    var txt = 'Udało Ci się!\nPodążaj do: 12 West Ln, London SE16 4NY\nNim udasz się w to miejsce\nwykonaj ostatnie zadanie.\nGdy Ci się uda - otrzymasz hasło';
+    var x = 250;
+    var y = 40;
+    var lineheight = 40;
+    var lines = txt.split('\n');
+    for (var i = 0; i<lines.length; i++)
+        ctx.fillText(lines[i], x, y + (i*lineheight) );
+
     running = false;
 };
 

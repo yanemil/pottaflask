@@ -4,7 +4,7 @@ from wtforms import SelectField
 # CATEGORY = [('Animals', 'Animals'), ('Films', 'Films'), ('Music', 'Music'), ('History', 'History')]
 # QUIZ_TYPE = [('True / False', 'True / False'), ('Multiple Choice', 'Multiple Choice')]
 # QUANTITY = [('10', '10'), ('5', '5'), ('15', '15')]
-DECISION = [('ŁATWIZNA', 'ŁATWIZNA'), ('TRYB VOLDEMORT', 'TRYB VOLDEMORT')]
+DECISION = [('TRYB VOLDEMORT', 'TRYB VOLDEMORT'), ('ŁATWIZNA', 'ŁATWIZNA')]
 
 
 class MyForm(FlaskForm):
