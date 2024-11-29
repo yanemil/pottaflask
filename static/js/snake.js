@@ -1,7 +1,6 @@
 const gameBoard = document.querySelector("#gameBoard");
 const ctx = gameBoard.getContext("2d");
 const scoreText = document.querySelector("#scoreText");
-const SuccessMessageText = document.querySelector("#SuccessMessage");
 const resetBtn = document.querySelector("#resetBtn");
 const gameWidth = gameBoard.width;
 const gameHeight = gameBoard.height;
@@ -12,12 +11,12 @@ const foodColor = "red";
 
 const unitSize = 25;
 let running = false;
+let success = false;
 let xVelocity = unitSize;
 let yVelocity = 0;
 let foodX;
 let foodY;
 let score = 0;
-let success = "";
 
 let snake = [
     {x:unitSize * 4, y:0},
@@ -37,7 +36,6 @@ gameStart();
 function gameStart(){
     running = true;
     scoreText.textContent = score;
-    SuccessMessageText.textContent = success;
     createFood();
     drawFood();
     nextTick();
@@ -55,7 +53,12 @@ function nextTick(){
         }, 75);
     }
     else{
-        displayGameOver();
+        if(success){
+            displaySuccess();
+        }
+        else {
+            displayGameOver();
+        }
     }
 };
 
@@ -87,8 +90,8 @@ function moveSnake(){
         score+=1;
         scoreText.textContent = score;
         if (score == 14) {
-            displaySuccess();
-            // SuccessMessageText.textContent = "Gratulacje! Idż do: Kawiarnia №№, 12 West Ln, London SE16 4NY.   Zanim udasz się w to miejsce, przejdź do ostatniego zadania, by odgadnąć hasło";
+            success = true;
+            running = false;
             resetBtn.textContent = "Przejdź dalej";
             resetBtn.addEventListener("click", goRedirect);
         }
@@ -171,20 +174,20 @@ function displayGameOver(){
     running = false;
 };
 
+
 function displaySuccess(){
     ctx.font = "28px MV Boli";
     ctx.fillStyle = "black";
     ctx.textAlign = "center";
 
-    var txt = 'Udało Ci się!\nPodążaj do: 12 West Ln, London SE16 4NY\nNim udasz się w to miejsce\nwykonaj ostatnie zadanie.\nGdy Ci się uda - otrzymasz hasło';
+    var txt = 'Udało Ci się!\nPodążaj do:\n 12 West Ln, London SE16 4NY\nNim udasz się w to miejsce\nwykonaj ostatnie zadanie.\nGdy Ci się uda - otrzymasz hasło';
     var x = 250;
     var y = 40;
     var lineheight = 40;
     var lines = txt.split('\n');
     for (var i = 0; i<lines.length; i++)
         ctx.fillText(lines[i], x, y + (i*lineheight) );
-
-    running = false;
+    // running = false;
 };
 
 function resetGame(){
